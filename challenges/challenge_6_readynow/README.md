@@ -15,8 +15,10 @@ going on, where to go, and how to stay safe.
 | Sequential validate-and-refine workflow                     | `agent.py` — `Workflow(START → coordinator → critique → refine)`        |
 | Log all user–agent interactions                             | `callbacks.py`                                                          |
 | Validate input, refuse off-mission requests                 | `callbacks.py` — `is_safe_input`, `is_on_mission`                       |
-| Deploy to Agent Platform                                    | `deploy.py`                                                             |
+| Deploy to Agent Platform                                    | `deploy.py` — run log in `deploy_output.log` (engine `reasoningEngines/2841087743516213248`, us-central1) |
 | Test code                                                   | `test_callbacks.py` (13), `test_workflow.py` (6) - no API key needed    |
+| Working deployed solution                                   | `deploy_output.log` step 3 — three prompts answered by the *remote* engine, incl. multi-agent delegation and off-mission refusal |
+| UI evidence                                                 | `screenshots/` — `adk web` sessions: capabilities, multi-agent trace, critique/refine stages, refusal |
 
 Supporting modules: `models.py` (model factory), `tools.py` (geocoding, NWS, OSRM).
 
