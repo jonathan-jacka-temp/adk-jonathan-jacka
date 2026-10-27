@@ -1,0 +1,822 @@
+=== 1. local smoke test through AdkApp
+=== user: What can you help me with?
+/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/vertexai/preview/reasoning_engines/templates/adk.py:1138: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  self._tmpl_attrs["credential_service"] = InMemoryCredentialService()
+/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+AFC is enabled with max remote calls: 10.
+HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/qwiklabs-gcp-03-9ac2a676fb80/locations/global/publishers/google/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+AFC is enabled with max remote calls: 10.
+HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/qwiklabs-gcp-03-9ac2a676fb80/locations/global/publishers/google/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+[coordinator] USER » What can you help me with?
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+Response received from the model.
+[coordinator] MODEL » Hello! I am **ReadyNow!**, your FEMA emergency preparedness assistant. I'm here to help you stay safe, informed, and prepared before, during, and after a disaster or emergency. 
+
+Here is what I can help you with:
+
+*   **Current Weather & Hazards:** I can retrieve real-time weather forecasts, active watches, and warnings for any U.S. location.
+*   **Disaster News & Shelters:** I can search for current emergency alerts, local evacuation orders, disaster news, and open emergency shelters in your area.
+*   **Evacuation & Travel Routes:** If you need to evacuate or travel, I can provide driving directions, distance, and estimated travel times between U.S. locations.
+*   **Safety & Preparedness Advice:** I can answer questions on how to prepare for disasters (like hurricanes, wildfires, earthquakes, or floods), what to put in your emergency kit, and how to stay safe during an active hazard.
+
+How can I help you prepare or stay safe today?
+[coordinator]
+Hello! I am **ReadyNow!**, your FEMA emergency preparedness assistant. I'm here to help you stay safe, informed, and prepared before, during, and after a disaster or emergency. 
+
+Here is what I can help you with:
+
+*   **Current Weather & Hazards:** I can retrieve real-time weather forecasts, active watches, and warnings for any U.S. location.
+*   **Disaster News & Shelters:** I can search for current emergency alerts, local evacuation orders, disaster news, and open emergency shelters in your area.
+*   **Evacuation & Travel Routes:** If you need to evacuate or travel, I can provide driving directions, distance, and estimated travel times between U.S. locations.
+*   **Safety & Preparedness Advice:** I can answer questions on how to prepare for disasters (like hurricanes, wildfires, earthquakes, or floods), what to put in your emergency kit, and how to stay safe during an active hazard.
+
+How can I help you prepare or stay safe today?
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+AFC is enabled with max remote calls: 10.
+Response received from the model.
+[critique] MODEL » *   **Add an immediate life-safety disclaimer at the very top:** If the user is in immediate danger, they should not be interacting with a chatbot. Start with a prominent warning: *"If you are in immediate danger, please call 911 or your local emergency services immediately."*
+*   **Prioritize life-saving information in the bullet points:** Move "Disaster News & Shelters" and "Evacuation & Travel Routes" to the top of the list. Move "Current Weather" and "Preparedness Advice" (which are less urgent during an active crisis) to the bottom.
+*   **Streamline the introduction for faster reading:** A stressed user needs to scan the text instantly. Shorten the opening greeting to one direct sentence (e.g., *"I am ReadyNow!, your FEMA emergency assistant. I can help you find safety information quickly."*)
+*   **Prompt for the user's location immediately:** Instead of a generic closing question, ask the user to provide their location right away so you can generate immediate alerts (e.g., *"To start, please tell me your current city, state, or ZIP code, or ask me a question."*)
+*   **Add offline/alternative resources:** If a disaster is occurring, internet/data connections may fail. Include a brief note on how to get help offline, such as: *"If you lose internet access, text 'SHELTER' and your ZIP code to 43362 (4FEMA) to find open shelters."*
+[critique]
+*   **Add an immediate life-safety disclaimer at the very top:** If the user is in immediate danger, they should not be interacting with a chatbot. Start with a prominent warning: *"If you are in immediate danger, please call 911 or your local emergency services immediately."*
+*   **Prioritize life-saving information in the bullet points:** Move "Disaster News & Shelters" and "Evacuation & Travel Routes" to the top of the list. Move "Current Weather" and "Preparedness Advice" (which are less urgent during an active crisis) to the bottom.
+*   **Streamline the introduction for faster reading:** A stressed user needs to scan the text instantly. Shorten the opening greeting to one direct sentence (e.g., *"I am ReadyNow!, your FEMA emergency assistant. I can help you find safety information quickly."*)
+*   **Prompt for the user's location immediately:** Instead of a generic closing question, ask the user to provide their location right away so you can generate immediate alerts (e.g., *"To start, please tell me your current city, state, or ZIP code, or ask me a question."*)
+*   **Add offline/alternative resources:** If a disaster is occurring, internet/data connections may fail. Include a brief note on how to get help offline, such as: *"If you lose internet access, text 'SHELTER' and your ZIP code to 43362 (4FEMA) to find open shelters."*
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+AFC is enabled with max remote calls: 10.
+Response received from the model.
+[refine] MODEL » **If you are in immediate danger, please call 911 or your local emergency services immediately.**
+
+I am **ReadyNow!**, your FEMA emergency assistant. I can help you find safety information quickly. 
+
+Here is what I can help you with:
+
+*   **Disaster News & Shelters:** Find current emergency alerts, local evacuation orders, disaster news, and open emergency shelters in your area.
+*   **Evacuation & Travel Routes:** Get driving directions, distances, and estimated travel times between U.S. locations if you need to evacuate.
+*   **Current Weather & Hazards:** Retrieve real-time weather forecasts, active watches, and warnings for any U.S. location.
+*   **Safety & Preparedness Advice:** Get tips on how to prepare for disasters (like hurricanes, wildfires, earthquakes, or floods), what to put in your emergency kit, and how to stay safe.
+
+**Offline Resource:** If you lose internet access during an emergency, you can text **"SHELTER"** and your **ZIP code** to **43362** (4FEMA) to find open shelters.
+
+To start, please tell me your current city, state, or ZIP code, or ask me a question.
+[refine]
+**If you are in immediate danger, please call 911 or your local emergency services immediately.**
+
+I am **ReadyNow!**, your FEMA emergency assistant. I can help you find safety information quickly. 
+
+Here is what I can help you with:
+
+*   **Disaster News & Shelters:** Find current emergency alerts, local evacuation orders, disaster news, and open emergency shelters in your area.
+*   **Evacuation & Travel Routes:** Get driving directions, distances, and estimated travel times between U.S. locations if you need to evacuate.
+*   **Current Weather & Hazards:** Retrieve real-time weather forecasts, active watches, and warnings for any U.S. location.
+*   **Safety & Preparedness Advice:** Get tips on how to prepare for disasters (like hurricanes, wildfires, earthquakes, or floods), what to put in your emergency kit, and how to stay safe.
+
+**Offline Resource:** If you lose internet access during an emergency, you can text **"SHELTER"** and your **ZIP code** to **43362** (4FEMA) to find open shelters.
+
+To start, please tell me your current city, state, or ZIP code, or ask me a question.
+=== user: There's a hurricane warning for Miami. What's the weather and how do I get to Orlando?
+AFC is enabled with max remote calls: 10.
+HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/qwiklabs-gcp-03-9ac2a676fb80/locations/global/publishers/google/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+AFC is enabled with max remote calls: 10.
+HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/qwiklabs-gcp-03-9ac2a676fb80/locations/global/publishers/google/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+[coordinator] USER » There's a hurricane warning for Miami. What's the weather and how do I get to Orlando?
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+Response received from the model.
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+Response received from the model.
+HTTP Request: GET https://geocoding-api.open-meteo.com/v1/search?name=Miami&count=1&country=US "HTTP/1.1 200 OK"
+HTTP Request: GET https://geocoding-api.open-meteo.com/v1/search?name=Orlando&count=1&country=US "HTTP/1.1 200 OK"
+HTTP Request: GET https://router.project-osrm.org/route/v1/driving/-80.19366,25.77427;-81.37924,28.53834?overview=false&steps=true "HTTP/1.1 200 OK"
+Response received from the model.
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+HTTP Request: GET https://geocoding-api.open-meteo.com/v1/search?name=Miami&count=1&country=US "HTTP/1.1 200 OK"
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+Response received from the model.
+HTTP Request: GET https://api.weather.gov/points/25.77427,-80.19366 "HTTP/1.1 301 Moved Permanently"
+HTTP Request: GET https://api.weather.gov/points/25.7743,-80.1937 "HTTP/1.1 200 OK"
+HTTP Request: GET https://api.weather.gov/gridpoints/MFL/110,51/forecast "HTTP/1.1 200 OK"
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+Response received from the model.
+[routes_agent]
+An evacuation/travel route from **Miami, FL** to **Orlando, FL** has been calculated. 
+
+### **Route Summary**
+* **Total Distance:** 233.2 miles
+* **Estimated Drive Time:** 4 hours and 21 minutes (261 minutes)
+
+### **Key Directions / Turn-by-Turn Steps**
+1. **Depart** onto North Miami Avenue.
+2. Take the **on-ramp** and follow signs to merge.
+3. Keep left/right at the upcoming **forks** to stay on the highway connection.
+4. Take the **off-ramp** and merge onto **Florida's Turnpike** (North).
+5. Follow Florida's Turnpike for the majority of the trip toward Orlando.
+6. Take the **off-ramp** and merge onto **I-4 Express** (or follow local signs for I-4 East).
+7. Take the **off-ramp** toward downtown Orlando.
+8. Turn onto **West South Street** to arrive at your destination.
+
+*Note: Please monitor local traffic reports and road conditions during an evacuation, as travel times may increase significantly.*
+Response received from the model.
+[weather_agent]
+**HAZARDOUS WEATHER ALERT FOR MIAMI, FL**
+
+* **High Winds (Today and Tonight):** Northeast winds of 28 mph with gusts up to 37 mph are expected this afternoon, continuing tonight at 14 to 24 mph with gusts up to 33 mph.
+* **Storms and Heavy Rainfall (Today and Tonight):** Showers and thunderstorms are likely (60% chance) both this afternoon and tonight. Rainfall amounts between a quarter and half of an inch are possible in each period, which may cause localized pooling. 
+* **Extended Outlook:** A persistent chance of daily showers and thunderstorms continues through early next week, though winds are forecast to subside starting Wednesday.
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+Response received from the model.
+[coordinator] MODEL » ### **URGENT: Hazardous Weather Alert for Miami**
+A hazardous weather alert is in effect for Miami. 
+* **High Winds:** Northeast winds of 28 mph with **gusts up to 37 mph** are expected today and tonight.
+* **Storms & Heavy Rain:** There is a 60% chance of showers and thunderstorms today and tonight. Rainfall could lead to localized pooling and minor flooding. 
+
+---
+
+### **Evacuation Route: Miami, FL to Orlando, FL**
+If you are evacuating to Orlando, please prepare for your drive immediately. High winds can make driving high-profile vehicles difficult, and heavy rain may reduce visibility.
+
+* **Total Distance:** ~233 miles
+* **Estimated Drive Time:** 4 hours and 21 minutes *(Note: Expect significantly longer travel times due to evacuation traffic).*
+
+#### **Primary Route Steps:**
+1. From Miami, merge onto **Florida's Turnpike (North)**.
+2. Follow Florida's Turnpike North for the majority of the trip.
+3. As you approach Orlando, take the exit to merge onto **I-4** (or I-4 Express) toward downtown Orlando.
+4. Take the off-ramp toward downtown Orlando to reach your final destination.
+
+---
+
+### **Important Safety Tips Before You Go:**
+* **Check Road Conditions:** Evacuation routes can become heavily congested. Check FL511 (FL511.com) for real-time traffic and road closures before you leave.
+* **Fuel Up Now:** Ensure your vehicle has a full tank of gas or a full charge, as service stations along evacuation routes may run out of fuel or lose power.
+* **Secure Your Home:** If you have time, secure outdoor objects, shut your hurricane shutters, and unplug major appliances.
+* **Pack an Emergency Kit:** Bring plenty of water, non-perishable food, chargers, medications, important documents, and pet supplies.
+[coordinator]
+### **URGENT: Hazardous Weather Alert for Miami**
+A hazardous weather alert is in effect for Miami. 
+* **High Winds:** Northeast winds of 28 mph with **gusts up to 37 mph** are expected today and tonight.
+* **Storms & Heavy Rain:** There is a 60% chance of showers and thunderstorms today and tonight. Rainfall could lead to localized pooling and minor flooding. 
+
+---
+
+### **Evacuation Route: Miami, FL to Orlando, FL**
+If you are evacuating to Orlando, please prepare for your drive immediately. High winds can make driving high-profile vehicles difficult, and heavy rain may reduce visibility.
+
+* **Total Distance:** ~233 miles
+* **Estimated Drive Time:** 4 hours and 21 minutes *(Note: Expect significantly longer travel times due to evacuation traffic).*
+
+#### **Primary Route Steps:**
+1. From Miami, merge onto **Florida's Turnpike (North)**.
+2. Follow Florida's Turnpike North for the majority of the trip.
+3. As you approach Orlando, take the exit to merge onto **I-4** (or I-4 Express) toward downtown Orlando.
+4. Take the off-ramp toward downtown Orlando to reach your final destination.
+
+---
+
+### **Important Safety Tips Before You Go:**
+* **Check Road Conditions:** Evacuation routes can become heavily congested. Check FL511 (FL511.com) for real-time traffic and road closures before you leave.
+* **Fuel Up Now:** Ensure your vehicle has a full tank of gas or a full charge, as service stations along evacuation routes may run out of fuel or lose power.
+* **Secure Your Home:** If you have time, secure outdoor objects, shut your hurricane shutters, and unplug major appliances.
+* **Pack an Emergency Kit:** Bring plenty of water, non-perishable food, chargers, medications, important documents, and pet supplies.
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+AFC is enabled with max remote calls: 10.
+Response received from the model.
+[critique] MODEL » * **Clarify the Evacuation Trigger:** The listed weather conditions (37 mph gusts, 60% rain) do not typically warrant a 200+ mile evacuation. If there is an official evacuation order for Miami-Dade County, state this explicitly at the very top, including which Evacuation Zones (e.g., Zone A, Zone B) must leave. 
+* **Reorder for Chronological Safety:** Move the "Before You Go" safety tips *above* the driving route. Stressed readers need to pack their emergency kit, secure their home, and fuel up before they look at turn-by-turn highway directions.
+* **Add Destination Planning:** Suggest finding a designated shelter or hotel in Orlando *before* leaving. Driving into an evacuation destination without a planned stop can leave evacuees stranded.
+* **Address Tolls:** Florida's Turnpike is a toll road. Add a note reminding drivers to check if toll suspensions are in effect, or to ensure their SunPass/E-Pass is active.
+* **Identify Evacuation Zones:** Add a quick link or instruction for readers to "Know Your Zone" (Miami-Dade County Emergency portal) to verify if their specific address is under an evacuation order.
+* **Condense for Scannability:** Bold only the core actionable verbs in the safety tips (e.g., "**Pack** an emergency kit" instead of "**Pack an Emergency Kit:**") so a panicked reader can scan and digest the information in under 10 seconds.
+[critique]
+* **Clarify the Evacuation Trigger:** The listed weather conditions (37 mph gusts, 60% rain) do not typically warrant a 200+ mile evacuation. If there is an official evacuation order for Miami-Dade County, state this explicitly at the very top, including which Evacuation Zones (e.g., Zone A, Zone B) must leave. 
+* **Reorder for Chronological Safety:** Move the "Before You Go" safety tips *above* the driving route. Stressed readers need to pack their emergency kit, secure their home, and fuel up before they look at turn-by-turn highway directions.
+* **Add Destination Planning:** Suggest finding a designated shelter or hotel in Orlando *before* leaving. Driving into an evacuation destination without a planned stop can leave evacuees stranded.
+* **Address Tolls:** Florida's Turnpike is a toll road. Add a note reminding drivers to check if toll suspensions are in effect, or to ensure their SunPass/E-Pass is active.
+* **Identify Evacuation Zones:** Add a quick link or instruction for readers to "Know Your Zone" (Miami-Dade County Emergency portal) to verify if their specific address is under an evacuation order.
+* **Condense for Scannability:** Bold only the core actionable verbs in the safety tips (e.g., "**Pack** an emergency kit" instead of "**Pack an Emergency Kit:**") so a panicked reader can scan and digest the information in under 10 seconds.
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+AFC is enabled with max remote calls: 10.
+Node execution failed with exception
+Traceback (most recent call last):
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/models/google_llm.py", line 365, in generate_content_async
+    response = await maybe_without_genai_instrumentation(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/models.py", line 8569, in generate_content
+    response = await self._generate_content_with_continuation(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/models.py", line 8368, in _generate_content_with_continuation
+    response = await self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/models.py", line 6966, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 2110, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 2043, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 1964, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/errors.py", line 279, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/errors.py", line 301, in raise_error_async
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py", line 169, in run
+    await self._execute_node(ctx, node_input)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py", line 364, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py", line 378, in _run_node_loop
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_base_node.py", line 202, in run
+    item = await anext(agen, _sentinel)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/llm_agent.py", line 690, in _run_impl
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_llm_agent_wrapper.py", line 468, in run_llm_agent_as_node
+    async for event in run_iter:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 381, in run_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 482, in _run_with_lifecycle
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 166, in stream_in_scope
+    item = await _drive(owned.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 154, in _drive
+    return await step
+           ^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 445, in _run
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/llm_agent.py", line 639, in _run_async_impl
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 299, in run_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 381, in _run_one_step_async
+    async for llm_response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 564, in _call_llm_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_model_call.py", line 322, in call_llm_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 166, in stream_in_scope
+    item = await _drive(owned.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 154, in _drive
+    return await step
+           ^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_model_call.py", line 283, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 614, in _run_and_handle_error
+    async for response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_finalizer.py", line 429, in run_and_handle_error
+    raise model_error
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_finalizer.py", line 403, in run_and_handle_error
+    async for llm_response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/utils/_runner_utils.py", line 52, in _stream_in_caller_scope
+    item = await _InContext(ctx, agen.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/utils/_runner_utils.py", line 79, in __await__
+    waiting_on = self._ctx.run(coro.send, value)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_finalizer.py", line 391, in _record_responses
+    async for llm_response in timed:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 1012, in time_model_awaits
+    async for response in responses:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/models/google_llm.py", line 393, in generate_content_async
+    raise _ResourceExhaustedError(ce) from ce
+google.adk.models.google_llm._ResourceExhaustedError: 
+On how to mitigate this issue, please refer to:
+
+https://google.github.io/adk-docs/agents/models/google-gemini/#error-code-429-resource_exhausted
+
+
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}
+Root node readynow failed.
+Traceback (most recent call last):
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/models/google_llm.py", line 365, in generate_content_async
+    response = await maybe_without_genai_instrumentation(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/models.py", line 8569, in generate_content
+    response = await self._generate_content_with_continuation(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/models.py", line 8368, in _generate_content_with_continuation
+    response = await self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/models.py", line 6966, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 2110, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 2043, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 1964, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/errors.py", line 279, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/errors.py", line 301, in raise_error_async
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 894, in _cleanup_root_task
+    await task
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner_utils.py", line 276, in _drive_root_node
+    raise e.error
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py", line 169, in run
+    await self._execute_node(ctx, node_input)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py", line 364, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py", line 378, in _run_node_loop
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_base_node.py", line 202, in run
+    item = await anext(agen, _sentinel)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/llm_agent.py", line 690, in _run_impl
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_llm_agent_wrapper.py", line 468, in run_llm_agent_as_node
+    async for event in run_iter:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 381, in run_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 482, in _run_with_lifecycle
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 166, in stream_in_scope
+    item = await _drive(owned.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 154, in _drive
+    return await step
+           ^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 445, in _run
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/llm_agent.py", line 639, in _run_async_impl
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 299, in run_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 381, in _run_one_step_async
+    async for llm_response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 564, in _call_llm_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_model_call.py", line 322, in call_llm_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 166, in stream_in_scope
+    item = await _drive(owned.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 154, in _drive
+    return await step
+           ^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_model_call.py", line 283, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 614, in _run_and_handle_error
+    async for response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_finalizer.py", line 429, in run_and_handle_error
+    raise model_error
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_finalizer.py", line 403, in run_and_handle_error
+    async for llm_response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/utils/_runner_utils.py", line 52, in _stream_in_caller_scope
+    item = await _InContext(ctx, agen.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/utils/_runner_utils.py", line 79, in __await__
+    waiting_on = self._ctx.run(coro.send, value)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_finalizer.py", line 391, in _record_responses
+    async for llm_response in timed:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 1012, in time_model_awaits
+    async for response in responses:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/models/google_llm.py", line 393, in generate_content_async
+    raise _ResourceExhaustedError(ce) from ce
+google.adk.models.google_llm._ResourceExhaustedError: 
+On how to mitigate this issue, please refer to:
+
+https://google.github.io/adk-docs/agents/models/google-gemini/#error-code-429-resource_exhausted
+
+
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}
+prompt failed; continuing
+Traceback (most recent call last):
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/models/google_llm.py", line 365, in generate_content_async
+    response = await maybe_without_genai_instrumentation(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/models.py", line 8569, in generate_content
+    response = await self._generate_content_with_continuation(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/models.py", line 8368, in _generate_content_with_continuation
+    response = await self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/models.py", line 6966, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 2110, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 2043, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/_api_client.py", line 1964, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/errors.py", line 279, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/genai/errors.py", line 301, in raise_error_async
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/challenges/challenge_6_readynow/deploy.py", line 99, in run_messages
+    log_events(query_fn(user_id=USER_ID, message=message))
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/challenges/challenge_6_readynow/deploy.py", line 87, in log_events
+    for event in events:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/vertexai/preview/reasoning_engines/templates/adk.py", line 1221, in stream_query
+    for event in self._tmpl_attrs.get("runner").run(
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 1121, in run
+    raise agent_error
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 1074, in _asyncio_thread_main
+    asyncio.run(_invoke_run_async())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 1069, in _invoke_run_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 1253, in run_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 610, in _run_node_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner_utils.py", line 382, in run_node_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 166, in stream_in_scope
+    item = await _drive(owned.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 154, in _drive
+    return await step
+           ^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner_utils.py", line 300, in _run
+    await runner._cleanup_root_task(  # pylint: disable=protected-access
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/runners.py", line 894, in _cleanup_root_task
+    await task
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner_utils.py", line 276, in _drive_root_node
+    raise e.error
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py", line 169, in run
+    await self._execute_node(ctx, node_input)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py", line 364, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_node_runner.py", line 378, in _run_node_loop
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_base_node.py", line 202, in run
+    item = await anext(agen, _sentinel)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/llm_agent.py", line 690, in _run_impl
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/workflow/_llm_agent_wrapper.py", line 468, in run_llm_agent_as_node
+    async for event in run_iter:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 381, in run_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 482, in _run_with_lifecycle
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 166, in stream_in_scope
+    item = await _drive(owned.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 154, in _drive
+    return await step
+           ^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/base_agent.py", line 445, in _run
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/agents/llm_agent.py", line 639, in _run_async_impl
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 299, in run_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 381, in _run_one_step_async
+    async for llm_response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 564, in _call_llm_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_model_call.py", line 322, in call_llm_async
+    async for event in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 166, in stream_in_scope
+    item = await _drive(owned.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 154, in _drive
+    return await step
+           ^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_model_call.py", line 283, in _call_llm_with_tracing
+    async for llm_response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 614, in _run_and_handle_error
+    async for response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_finalizer.py", line 429, in run_and_handle_error
+    raise model_error
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_finalizer.py", line 403, in run_and_handle_error
+    async for llm_response in agen:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/utils/_runner_utils.py", line 52, in _stream_in_caller_scope
+    item = await _InContext(ctx, agen.__anext__())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/utils/_runner_utils.py", line 79, in __await__
+    waiting_on = self._ctx.run(coro.send, value)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/flows/llm_flows/core/_finalizer.py", line 391, in _record_responses
+    async for llm_response in timed:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/telemetry/_instrumentation.py", line 1012, in time_model_awaits
+    async for response in responses:
+  File "/home/student_01_294cfe12c421/adk-jonathan-jacka/.venv/lib/python3.12/site-packages/google/adk/models/google_llm.py", line 393, in generate_content_async
+    raise _ResourceExhaustedError(ce) from ce
+google.adk.models.google_llm._ResourceExhaustedError: 
+On how to mitigate this issue, please refer to:
+
+https://google.github.io/adk-docs/agents/models/google-gemini/#error-code-429-resource_exhausted
+
+
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}
+=== user: Write me a Python script to sort a list.
+AFC is enabled with max remote calls: 10.
+HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/qwiklabs-gcp-03-9ac2a676fb80/locations/global/publishers/google/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+AFC is enabled with max remote calls: 10.
+HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/qwiklabs-gcp-03-9ac2a676fb80/locations/global/publishers/google/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+[coordinator] REJECTED (off-mission) » Write me a Python script to sort a list.
+[coordinator]
+I'm ReadyNow!, an emergency preparedness assistant. I can help with weather and hazards, disaster news and alerts, evacuation routes, shelters, and how to stay safe — but I can't help with that request.
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+AFC is enabled with max remote calls: 10.
+Response received from the model.
+[critique] MODEL » * **Put the most urgent information first:** State immediately that you cannot fulfill the specific request, so a user in danger does not waste time reading your introduction.
+* **Add a critical missing safety step:** Provide immediate instructions to contact emergency services (e.g., "If you are in immediate danger, please call 911 or your local emergency services right away").
+* **Remove promotional/brand language:** Omit the brand introduction ("I'm ReadyNow!...") and the long list of your capabilities. A user in a crisis needs direct, clutter-free answers, not a marketing pitch.
+* **Streamline for speed:** Shorten the message to two direct sentences: one stating you cannot help with the request (coupled with an emergency contact alternative), and one brief sentence on what you *can* do if they are safe.
+[critique]
+* **Put the most urgent information first:** State immediately that you cannot fulfill the specific request, so a user in danger does not waste time reading your introduction.
+* **Add a critical missing safety step:** Provide immediate instructions to contact emergency services (e.g., "If you are in immediate danger, please call 911 or your local emergency services right away").
+* **Remove promotional/brand language:** Omit the brand introduction ("I'm ReadyNow!...") and the long list of your capabilities. A user in a crisis needs direct, clutter-free answers, not a marketing pitch.
+* **Streamline for speed:** Shorten the message to two direct sentences: one stating you cannot help with the request (coupled with an emergency contact alternative), and one brief sentence on what you *can* do if they are safe.
+Sending out request, model: gemini-3.5-flash, backend: GoogleLLMVariant.VERTEX_AI, stream: False
+AFC is enabled with max remote calls: 10.
+Response received from the model.
+[refine] MODEL » I cannot help with this request, so if you are in immediate danger, please call 911 or your local emergency services right away. If you are safe, I can help you find general disaster safety and preparedness information.
+[refine]
+I cannot help with this request, so if you are in immediate danger, please call 911 or your local emergency services right away. If you are safe, I can help you find general disaster safety and preparedness information.
+=== 2. deploying to Agent Engine (several minutes)
+/home/student_01_294cfe12c421/adk-jonathan-jacka/challenges/challenge_6_readynow/deploy.py:118: FutureWarning: The vertexai.Client class is deprecated. Please use agentplatform.Client instead.
+  client = vertexai.Client(project=PROJECT_ID, location=LOCATION)
+Identified the following requirements: {'google-cloud-aiplatform': '2.6.0', 'pydantic': '2.14.1', 'cloudpickle': '3.1.2'}
+The following requirements are missing: {'pydantic'}
+The following requirements are appended: {'pydantic==2.14.1'}
+The final list of requirements: ['google-cloud-aiplatform[agent_engines,adk]', 'cloudpickle', 'httpx', 'pydantic==2.14.1']
+Using bucket qwiklabs-gcp-03-9ac2a676fb80-agent-staging
+Wrote to gs://qwiklabs-gcp-03-9ac2a676fb80-agent-staging/agent_engine/agent_engine.pkl
+Writing to gs://qwiklabs-gcp-03-9ac2a676fb80-agent-staging/agent_engine/requirements.txt
+Creating in-memory tarfile of extra_packages
+Writing to gs://qwiklabs-gcp-03-9ac2a676fb80-agent-staging/agent_engine/dependencies.tar.gz
+Using agent framework: google-adk
+HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/qwiklabs-gcp-03-9ac2a676fb80/locations/us-central1/reasoningEngines "HTTP/1.1 200 OK"
+Create Agent Engine backing LRO: projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088
+View progress and logs at https://console.cloud.google.com/logs/query?project=qwiklabs-gcp-03-9ac2a676fb80&query=resource.type%3D%22aiplatform.googleapis.com%2FReasoningEngine%22%0Aresource.labels.reasoning_engine_id%3D%222841087743516213248%22.
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+HTTP Request: GET https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248/operations/1568458503868121088 "HTTP/1.1 200 OK"
+Agent Engine created. To use it in another session:
+agent_engine=client.agent_engines.get(name='projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248')
+DEPLOYED: projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248
+=== 3. querying the deployed agent
+=== user: What can you help me with?
+HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248:streamQuery?alt=sse "HTTP/1.1 200 OK"
+[coordinator]
+Hello! I am **ReadyNow!**, your FEMA emergency preparedness assistant. I am here to help you stay safe, informed, and prepared before, during, and after disasters. 
+
+Here is what I can help you with:
+
+*   **Weather & Hazards:** I can fetch the latest US National Weather Service forecasts and alerts for any US location.
+*   **Emergency News & Shelters:** I can search for real-time disaster news, active evacuation orders, official alerts, and open shelter locations.
+*   **Evacuation & Travel Routes:** I can provide driving directions, distances, and estimated travel times between two US locations.
+*   **Safety & Preparedness Advice:** I can answer questions on how to prepare for emergencies, what to pack in a go-bag, and how to stay safe during specific hazards like hurricanes, wildfires, floods, or earthquakes.
+
+How can I help you stay safe and prepared today?
+[critique]
+*   **Add an immediate life-safety disclaimer at the very top:** If a user is in immediate danger, they should not be reading a menu of options. Start with a prominent warning: *"If you are in immediate danger, call 911 or your local emergency services immediately."*
+*   **Reorder the menu by urgency:** Move "Emergency News & Shelters" and "Evacuation & Travel Routes" to the top of the bulleted list. "Weather" and "Safety & Preparedness Advice" (which is often pre-disaster planning) should go last.
+*   **Streamline the introduction:** Cut the introductory fluff so a stressed user can scan the options faster. 
+    *   *Draft:* "Hello! I am ReadyNow!... I am here to help you..." 
+    *   *Revision:* "I am **ReadyNow!**, your FEMA emergency assistant. Tell me your location (City, State, or ZIP) or ask me about:"
+*   **Make the final call-to-action more direct:** Instead of the open-ended "How can I help you stay safe and prepared today?", prompt them to enter their location immediately to get fast results (e.g., *"To start, tell me your current city or ZIP code."*).
+[refine]
+**If you are in immediate danger, call 911 or your local emergency services immediately.**
+
+I am **ReadyNow!**, your FEMA emergency assistant. Tell me your location (City, State, or ZIP) or ask me about:
+
+*   **Emergency News & Shelters:** Real-time disaster news, active evacuation orders, official alerts, and open shelter locations.
+*   **Evacuation & Travel Routes:** Driving directions, distances, and estimated travel times between two US locations.
+*   **Weather & Hazards:** The latest US National Weather Service forecasts and alerts for any US location.
+*   **Safety & Preparedness Advice:** How to prepare for emergencies, what to pack in a go-bag, and how to stay safe during specific hazards like hurricanes, wildfires, floods, or earthquakes.
+
+To start, please tell me your current city or ZIP code.
+=== user: There's a hurricane warning for Miami. What's the weather and how do I get to Orlando?
+HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248:streamQuery?alt=sse "HTTP/1.1 200 OK"
+[routes_agent]
+The total driving distance from Miami to Orlando is **233.2 miles**, with an estimated drive time of **4 hours and 21 minutes** (261 minutes).
+
+Here are the key directions for the route:
+1. Depart onto **North Miami Avenue**.
+2. Follow the ramps to merge onto **Florida's Turnpike** (heading north).
+3. Take the exit to merge onto **I-4 Express**.
+4. Take the off-ramp and turn onto **West South Street** to arrive in Orlando.
+[weather_agent]
+**Hazardous Conditions:**
+*   **High Winds:** Northeast winds of 14 to 28 mph are expected today and tonight, with gusts reaching up to 37 mph today and 33 mph tonight.
+*   **Thunderstorms & Heavy Rain:** Showers and thunderstorms are likely (60% chance) today and tonight. Rainfall totals of 0.25 to 0.5 inches are possible during both periods.
+
+**General Forecast:**
+*   **Wednesday through Monday:** Conditions will slightly improve with highs around 84°F–85°F and lows around 74°F–77°F. Winds will decrease to 5 to 14 mph starting Wednesday, though a persistent 20% to 50% chance of showers and thunderstorms remains in the forecast through early next week.
+[coordinator]
+### **Urgent Weather Hazard Alert: Miami**
+* **High Winds:** Northeast winds of **14 to 28 mph** are expected today and tonight, with **gusts up to 37 mph** today and 33 mph tonight. 
+* **Thunderstorms & Heavy Rain:** There is a **60% chance of showers and thunderstorms** today and tonight, with rainfall totals of 0.25 to 0.5 inches possible. 
+* *Note:* Conditions are expected to improve starting Wednesday, but persistent rain and storm chances (20% to 50%) remain through early next week.
+
+---
+
+### **Evacuation Route: Miami to Orlando**
+If you are evacuating or traveling, please exercise extreme caution due to the high winds and potential heavy rain. 
+
+* **Total Distance:** 233.2 miles
+* **Estimated Drive Time:** 4 hours and 21 minutes (expect longer delays due to weather and potential evacuation traffic).
+
+**Key Directions:**
+1. Head north out of Miami and follow ramps to merge onto **Florida's Turnpike (heading North)**.
+2. Continue north on Florida's Turnpike.
+3. Take the exit to merge onto **I-4 Express** toward Orlando.
+4. Take the off-ramp and turn onto **West South Street** to arrive in Orlando.
+
+---
+
+### **Safety Recommendations for Travel:**
+* **Do Not Drive Through Flooded Roads:** "Turn around, don't drown." Just six inches of fast-moving water can knock you down, and one foot of moving water can sweep your vehicle away.
+* **Watch for Debris:** High wind gusts (up to 37 mph) can blow debris onto the roadway or cause high-profile vehicles to lose control. Keep both hands on the wheel.
+* **Fuel and Supplies:** Ensure your gas tank is full or your EV is fully charged before departing, as service plazas may have long lines or power outages. Bring plenty of water and emergency supplies for the drive.
+* **Check local authorities:** Before you leave, check FL511 for real-time traffic and road closures.
+[critique]
+* **Clarify Evacuation Status First:** If there is an active, official evacuation order for Miami-Dade County, place this confirmation and a link to "Find Your Evacuation Zone" at the very top. If this is a voluntary relocation, clarify that.
+* **Fix Routing to Avoid Express Lanes:** Change "I-4 Express" to "I-4 East." I-4 Express has limited exits, requires a transponder, and is not suitable for general emergency routing. 
+* **Remove Specific Local Street Destination:** Unless the user requested it, remove "West South Street" as the final step. Guide them to "Orlando" generally, as this street is a specific downtown location that may not match their safe destination.
+* **Add Toll Information:** Remind the reader that Florida's Turnpike is a toll road. Advise them to check if the state has suspended tolls for the evacuation.
+* **Refine Fuel/EV Charging Advice:** Explicitly advise fueling or fully charging *before* getting onto the Turnpike. Turnpike service plazas are notorious for running out of fuel and having hours-long lines during major evacuations.
+* **Adjust Weather Tone for Context:** A 37 mph wind gust and 0.5 inches of rain are moderate conditions. If there are active National Weather Service watches/warnings (like a Flash Flood Watch or Tropical Storm Warning), list them by name. If not, tone down "Urgent Weather Hazard Alert" to "Current Weather Conditions" to reduce unnecessary panic.
+[refine]
+### **Evacuation Status Check**
+Before departing, verify the evacuation status for your specific area:
+* **Official Evacuation:** If an active, official evacuation order has been issued for Miami-Dade County, locate your zone immediately using the [Find Your Evacuation Zone](https://www.miamidade.gov/global/emergency/evacuation-zones.page) tool. 
+* **Voluntary Relocation:** If no official evacuation orders are in place for your zone, your travel to Orlando is a voluntary relocation. Plan your departure early to avoid peak traffic.
+
+---
+
+### **Evacuation Route: Miami to Orlando**
+* **Total Distance:** 233.2 miles
+* **Estimated Drive Time:** 4 hours and 21 minutes (expect significantly longer travel times due to evacuation traffic).
+
+**Key Directions:**
+1. Head north out of Miami and follow ramps to merge onto **Florida's Turnpike (North)**. 
+   * *Note:* Florida's Turnpike is a toll road. Check local news or FL511 before departing to see if the state has temporarily suspended toll collections for this evacuation.
+2. Continue north on Florida's Turnpike.
+3. Take the exit to merge onto **I-4 East** toward Orlando. *(Avoid the I-4 Express lanes, as they require a transponder, have limited exits, and are not suitable for emergency routing).*
+4. Follow signs for **Orlando** to safely reach your destination.
+
+---
+
+### **Critical Travel & Safety Tips**
+
+* **Fuel or Charge BEFORE Getting on the Turnpike:** Fill your gas tank or fully charge your EV in Miami *before* you access the Turnpike. Turnpike service plazas are notorious for running out of fuel and experiencing hours-long lines during major evacuations.
+* **Do Not Drive Through Flooded Roads:** "Turn around, don't drown." Just six inches of fast-moving water can knock you down, and one foot of moving water can sweep your vehicle away.
+* **Watch for Debris and Wind:** Keep both hands on the wheel. Sustained winds and gusts can blow debris onto the roadway or cause high-profile vehicles to lose control.
+* **Check Live Road Conditions:** Before you start driving, check [FL511](https://fl511.com/) for real-time traffic updates, congestion reports, and road closures.
+
+---
+
+### **Current Weather Conditions: Miami**
+* **Winds:** Northeast winds of **14 to 28 mph** today and tonight, with **gusts up to 37 mph** today and 33 mph tonight. 
+* **Rain/Thunderstorms:** A **60% chance of showers and thunderstorms** today and tonight, with rainfall totals of 0.25 to 0.5 inches possible. 
+* **Outlook:** Conditions are expected to improve starting Wednesday, though persistent rain and storm chances (20% to 50%) remain through early next week.
+=== user: Write me a Python script to sort a list.
+HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248:streamQuery?alt=sse "HTTP/1.1 200 OK"
+[coordinator]
+I'm ReadyNow!, an emergency preparedness assistant. I can help with weather and hazards, disaster news and alerts, evacuation routes, shelters, and how to stay safe — but I can't help with that request.
+[critique]
+* **Put the most urgent information first:** State immediately that you cannot help with the request and direct the user to emergency services. Do not bury the refusal at the end.
+* **Add critical safety information:** If the reader is in danger, they need immediate instructions. Add a prominent directive to call 911 (or their local emergency number) immediately.
+* **Remove the introduction and list of features:** Cut "I'm ReadyNow!..." and the list of what you can do (weather, hazards, etc.). A stressed user in potential danger does not have time to read a menu of your services. 
+* **Make it faster to read:** Shorten the response to only two elements: the inability to help with this specific request, and the immediate action they should take to get real help.
+[refine]
+I cannot help with this request. 
+
+If you are in danger, please take immediate action:
+
+**Call 911** (or your local emergency number) right now.
+Left running. Delete with: remote_agent.delete(force=True)  # projects/1086642913458/locations/us-central1/reasoningEngines/2841087743516213248
