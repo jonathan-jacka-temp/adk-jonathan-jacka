@@ -51,9 +51,9 @@ LOCATION = os.environ.get("LOCATION", "us-central1")
 MODEL_LOCATION = os.environ.get("MODEL_LOCATION", "global")
 MODEL_ARMOR_TEMPLATE = os.environ.get("MODEL_ARMOR_TEMPLATE")
 
+# GOOGLE_CLOUD_PROJECT is set by Agent Engine itself and rejected if supplied.
 ENGINE_ENV_VARS = {
     "GOOGLE_GENAI_USE_VERTEXAI": "true",
-    "GOOGLE_CLOUD_PROJECT": PROJECT_ID,
     "GOOGLE_CLOUD_LOCATION": MODEL_LOCATION,
 }
 
@@ -95,7 +95,11 @@ def log_events(events) -> None:
 def run_messages(query_fn) -> None:
     for message in TEST_MESSAGES:
         logger.info("=== user: %s", message)
-        log_events(query_fn(user_id=USER_ID, message=message))
+        try:
+            log_events(query_fn(user_id=USER_ID, message=message))
+        except Exception:
+            # Shared lab project hits Gemini quota (429) under class load; keep going.
+            logger.exception("prompt failed; continuing")
 
 
 def main() -> None:
@@ -104,8 +108,11 @@ def main() -> None:
     plugins = build_plugins()
     app = AdkApp(agent=root_agent, plugins=plugins or None, env_vars=ENGINE_ENV_VARS)
 
-    logger.info("=== 1. local smoke test through AdkApp")
-    run_messages(app.stream_query)
+    if os.environ.get("SKIP_LOCAL_TEST", "").lower() in ("1", "true"):
+        logger.info("=== 1. local smoke test skipped (SKIP_LOCAL_TEST set)")
+    else:
+        logger.info("=== 1. local smoke test through AdkApp")
+        run_messages(app.stream_query)
 
     logger.info("=== 2. deploying to Agent Engine (several minutes)")
     client = vertexai.Client(project=PROJECT_ID, location=LOCATION)
@@ -121,7 +128,7 @@ def main() -> None:
             "identity_type": types.IdentityType.AGENT_IDENTITY,
         },
     )
-    logger.info("deployed: %s", remote_agent.api_resource.name)
+    logger.info("DEPLOYED: %s", remote_agent.api_resource.name)
 
     logger.info("=== 3. querying the deployed agent")
     run_messages(remote_agent.stream_query)

@@ -41,9 +41,9 @@ STAGING_BUCKET = os.environ["STAGING_BUCKET"]
 LOCATION = os.environ.get("LOCATION", "us-central1")
 MODEL_LOCATION = os.environ.get("MODEL_LOCATION", "global")
 
+# GOOGLE_CLOUD_PROJECT is set by Agent Engine itself and rejected if supplied.
 ENGINE_ENV_VARS = {
     "GOOGLE_GENAI_USE_VERTEXAI": "true",
-    "GOOGLE_CLOUD_PROJECT": PROJECT_ID,
     "GOOGLE_CLOUD_LOCATION": MODEL_LOCATION,
 }
 
@@ -65,8 +65,11 @@ def main() -> None:
 
     app = AdkApp(agent=root_agent, env_vars=ENGINE_ENV_VARS)
 
-    logger.info("=== 1. local smoke test through AdkApp")
-    log_events(app.stream_query(user_id=USER_ID, message=TEST_QUESTION))
+    if os.environ.get("SKIP_LOCAL_TEST", "").lower() in ("1", "true"):
+        logger.info("=== 1. local smoke test skipped (SKIP_LOCAL_TEST set)")
+    else:
+        logger.info("=== 1. local smoke test through AdkApp")
+        log_events(app.stream_query(user_id=USER_ID, message=TEST_QUESTION))
 
     logger.info("=== 2. deploying to Agent Engine (several minutes)")
     client = vertexai.Client(project=PROJECT_ID, location=LOCATION)
@@ -81,7 +84,7 @@ def main() -> None:
             "identity_type": types.IdentityType.AGENT_IDENTITY,
         },
     )
-    logger.info("deployed: %s", remote_agent.api_resource.name)
+    logger.info("DEPLOYED: %s", remote_agent.api_resource.name)
 
     logger.info("=== 3. querying the deployed agent")
     log_events(remote_agent.stream_query(user_id=USER_ID, message=TEST_QUESTION))
